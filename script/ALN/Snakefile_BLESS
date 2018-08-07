@@ -1,0 +1,20 @@
+configfile: "config.json"
+
+RULES_DIR="/NAS1/DOSSIERS_PERSO/VINCENT/PIPELINES/RULES/"
+R1=config["GENERAL"]["separator"]+config["GENERAL"]["paired"][0]
+R2=config["GENERAL"]["separator"]+config["GENERAL"]["paired"][1]
+
+
+include:RULES_DIR+"bwa_paired.rules"
+include:RULES_DIR+"samtools.rules"
+include:RULES_DIR+"bless.rules"
+
+
+rule all:
+	input: 
+		expand(config["GENERAL"]["experiment_name"]+"/mapping/BIGWIG/{sample}_normalized.bw",sample=config["GENERAL"]["samples"])
+	output:
+		config["GENERAL"]["experiment_name"]+"/benchmarks/detailed_summary.tsv"
+	shell:
+		"snakemake -n --detailed-summary > {output}"
+
