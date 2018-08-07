@@ -1,6 +1,6 @@
-configfile: "config.json"
+configfile: "config_BLESS.json"
 
-RULES_DIR="/NAS1/DOSSIERS_PERSO/VINCENT/PIPELINES/RULES/"
+RULES_DIR="RULES/"
 R1=config["GENERAL"]["separator"]+config["GENERAL"]["paired"][0]
 R2=config["GENERAL"]["separator"]+config["GENERAL"]["paired"][1]
 
