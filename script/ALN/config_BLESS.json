@@ -1,0 +1,22 @@
+{
+	"GENERAL":{
+		"experiment_name":"BLESS_JUNE",
+		"threads":12,
+		"sample_dir": "RAW",
+		"sample_ext" : ".fastq",
+		"samples":["trimmed_BLESS_U2OS+Tam","trimmed_BLESS_U2OS-Tam"],
+		"paired":["R1","R2"],
+		"separator":"."
+	},
+	"GENOME":{
+		"gen_dir": "female.hg19",
+		"gen_ext": ".fa"
+	},
+	"BWA":{
+		"custom":""
+	},
+	"SAMTOOLS":{
+		"quality":25,
+		"custom":""
+	}
+}
