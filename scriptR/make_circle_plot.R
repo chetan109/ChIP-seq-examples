@@ -7,8 +7,8 @@ require(rtracklayer)
 library("BSgenome.Hsapiens.UCSC.hg19")
 seqlens = seqlengths( Hsapiens );
 
-SITES <- list("HR"=import.bed("/mnt/volumes/NAS1/DATA/AsiSI/BLESS_HR_JunFragPE_Rmdups_pm500bp.bed"),
-              "NHEJ"=import.bed("/mnt/volumes/NAS1/DATA/AsiSI/BLESS_NHEJ_JunFragPE_Rmdups_pm500bp.bed")
+SITES <- list("HR"=import.bed("BLESS_HR_JunFragPE_Rmdups_pm500bp.bed"),
+              "NHEJ"=import.bed("BLESS_NHEJ_JunFragPE_Rmdups_pm500bp.bed")
 )
 #Specific order
 

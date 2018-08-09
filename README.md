@@ -14,10 +14,10 @@ The workflow was written with snakemake (python), and need some genomic tools :
 * `samtools 1.4`.
 * `FastQC v0.11.5`.
 * `R version 3.4.0` :
-	- `library(Rsamtools)`.
-        - `library(GenomicAlignments)`.
-        - `library(rtracklayer)`.
-        - `library(BSgenome.Hsapiens.UCSC.hg19)`.
+  * `library(Rsamtools)`.
+  * `library(GenomicAlignments)`.
+  * `library(rtracklayer)`.
+  * `library(BSgenome.Hsapiens.UCSC.hg19)`.
 
 
 
