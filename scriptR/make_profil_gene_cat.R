@@ -3,7 +3,7 @@ source("src/Functions.R")
 #packages
 require("ggplot2")
 require("reshape2")
-require(rtracklayer)
+require("rtracklayer")
 library("Homo.sapiens")
 
 SITES <- import.bed("BLESS_80best_JunFragPE_Rmdups_pm500bp.bed")

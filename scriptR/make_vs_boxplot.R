@@ -62,9 +62,9 @@ names(FILES) <- prots
 windows <- list("2kb"=2000)
 
 #List creation : LogFC, pOHT and mOHT profile signal for each Histone with specific windows
-rlpOHT = rlmOHT = rllogFC = list();
+rlmOHT = list();
 for( n in names(FILES) ){
-    rlpOHT[[n]] = rlmOHT[[n]] = rllogFC[[n]] = list();
+    rlmOHT[[n]] = list();
 }
 
 
@@ -73,12 +73,8 @@ for(n in prots){
     #Read the bigwig
     myWig = readData( dir = "", fnpOHT = FILES[[n]][2], fnmOHT = FILES[[n]][1] );
     for(bedname in names(SITES)){
-        
-        tmpPOHT = compute1ValPerSite( bed = SITES[[bedname]], wig = myWig[["pOHT"]], w = window, seqlens );
         tmpMOHT = compute1ValPerSite( bed = SITES[[bedname]], wig = myWig[["mOHT"]], w = window, seqlens );
-        rlpOHT[[n]][[bedname]] = tmpPOHT;
         rlmOHT[[n]][[bedname]] = tmpMOHT;
-
     }
 }
 ##PLOT
@@ -87,7 +83,7 @@ for(n in prots){
     dat.HR <- rlmOHT[[n]][["HR"]]
     dat.NHEJ <- rlmOHT[[n]][["NHEJ"]]
     dat.plot <- rbind(dat.plot,data.frame("Histones"=n,"HR"=dat.HR,"NHEJ"=dat.NHEJ))
-
+    
 }
 
 sub.dat.plot <- melt(dat.plot)

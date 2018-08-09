@@ -3,7 +3,7 @@ source("src/Functions.R")
 #packages
 require("ggplot2")
 require("reshape2")
-require(rtracklayer)
+require("rtracklayer")
 library("BSgenome.Hsapiens.UCSC.hg19")
 seqlens = seqlengths( Hsapiens );
 SITES <- import.bed("ASIsites_hg19.bed")
