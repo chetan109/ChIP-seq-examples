@@ -65,5 +65,6 @@ for(n in names(SITES)){
 
 p <- ggplot(dat.plot,aes(x=Window,y=Value,color=Type)) +
     geom_line() +
+    #geom_ribbon( aes( ymin = 0, ymax = Value ,fill=Type), alpha = 0.5 ) + #Add if you want shape under the plot line
     theme_classic(base_size = 18)
 print(p)
