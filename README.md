@@ -33,7 +33,8 @@ the scripts were written with `R`, and need some packages :
 
 | Script                    | Description                                                                          | Figures                           |
 |---------------------------|--------------------------------------------------------------------------------------|-----------------------------------|
-| get_asi_location.R        | Search AsiSI motif across genome + compute class (Bless80,HR,NHEJ).                   | Table S1                          |
+| get_asi_location.R        | Search AsiSI motif across genome.                                                    | Table S1                          |
+| get_repair_classes.R      | Compute HR and NHEJ classes based on RAD51/XRCC4 and RAD51/Lig4 ratios.              |                                   |
 | index_BLESS.R             | Plot sorted BLESS value for each AsiSI location.                                     | Figure S1B                        |
 | make_bamcompare_profile.R | Plot LogRatio coverage for given bigwig.                                             | Figures 2B,3B,6B,S2D              |
 | make_boxplot.R            | Plot the distribution for one/two bigwig with one/two bed.                           | Figures 1C,4B,6C,7B,7E,S4E        |
@@ -42,5 +43,5 @@ the scripts were written with `R`, and need some packages :
 | make_jitter_plot.R        | Plot a jittered distribution for a given bigwig with one bed file.                   | Figure S1D                        |
 | make_log_boxplot.R        | Plot the log ratio distribution of multiple bigwigs for one bed file.                | Figures 2A, 3A, 5A, 5B            |
 | make_profile.R            | Plot average profile for a given bigwig with one bed file.                           | Figures 1D,2B,4A,4D,6B,7C,S6A,S6F |
-| make_profil_gene_cat.R    | Plot average profile for multiple bigwig over human genes sorted by expression level. | Figure S2B                        |
-| make_vs_boxplot.R         | Plot the distribution of multiple bigwigs for two bed files.                          | Figures 4E,S5D                    |
+| make_profil_gene_cat.R    | Plot average profile for multiple bigwig over human genes sorted by expression level | Figure S2B                        |
+| make_vs_boxplot.R         | Plot the distribution of multiple bigwigs for two bed files                          | Figures 4E,S5D                    |
