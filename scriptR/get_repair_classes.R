@@ -45,7 +45,7 @@ NHEJ.sites <- bless80[NHEJ.sites] %>% sortSeqlevels() %>% sort()
 
 export.bed(NHEJ.sites,"BLESS_NHEJ_JunFragPE_Rmdups_pm500bp.bed")
 
-#Extract classes for RAD51/XRCC4 ratio
+#Extract classes for RAD51/Lig4 ratio
 ratio.pos <- cat.dat %>% mutate(pos = row_number())%>% arrange(desc(Ratio_RAD51.Lig4))
 #Extract HR sites
 HR.sites <- ratio.pos  %>% dplyr::slice(1:30) %>% pull(pos)
