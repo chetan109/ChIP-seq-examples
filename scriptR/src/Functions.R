@@ -248,3 +248,34 @@ computeProfileGenes = function( bed, wig, w = 3000, span = 200, seqlens , fun="s
     }
     return( rv );
 }
+
+
+compute1ValPerSiteForBLESS <- function( bed, wig, w = 20000, seqlens, fun = "sum" ){
+    if( class( wig ) != "SimpleRleList" ){
+        stop( "ERROR : unknown class of wig, please provide a SimpleRleList" );
+    }
+    vec = NULL;
+    for( i in 1:length( bed ) ){
+        if( i %% 100 == 0 ){
+            message( i, "/", length( bed ) );
+        }
+        bedi = bed[i, ];
+        chr = as.character( seqnames( bedi ) );
+        cov = wig[[chr]];
+        
+        stW = start(bedi) - w;
+        edW = end(bedi) + w;
+        stW[stW < 1] = 1;
+        edW[edW > seqlens[chr] | edW > length( cov )] = min( length( cov), seqlens[chr] );
+        v = Views( cov, start = stW, end = edW );
+        if( fun == "sum" ){
+            vm = sum( v );
+        }else if( fun == "mean" ){
+            vm =  mean( v );
+        }else{
+            stop( "ERROR : unknown function fun = ", fun, " - fun must be 'sum' or 'mean'" );
+        }
+        vec = c( vec, vm );
+    }
+    return( vec );
+}
