@@ -23,7 +23,7 @@ window <- 5000
 span <- 1
 wig <- import.bw(bw.file,as = "RleList")
 #HM and profile
-signal <- computeProfile(bed=SITES,wig=wig,w=window,span=span,seqlens = seqlens,method = "mean")
+signal <- computeProfile(bed=SITES,wig=wig,w=window,span=span,seqlens = seqlens,method = "sum")
 colnames(signal) <- seq( -window, window - span + 1, span )
 rownames(signal) <- SITES$name
 
@@ -35,14 +35,17 @@ signal$Sites <- factor(signal$Sites,levels = asi_order) #Order by specific value
 background = "white"
 highvalues = "#551A8B"
 
+max.treshold <- 2000 #Max value to plot
+min.treshold <- 0 #Max value to plot
+by.treshold <- seq( -window, window - span + 1, span ) %>% length()
 
 p = ggplot(signal,aes(Window,Sites)) + 
     geom_tile(aes(fill = Value)) + 
     scale_fill_gradient(low = background,high = highvalues,na.value=background) + 
+    #scale_fill_gradient(low = background,high = highvalues,na.value=background,limits=c(min.treshold, max.treshold), breaks=seq(min.treshold, max.treshold,by=by.treshold)) + #Uncomment if you want more plot control about limits
     labs(list(title = "", x = "", y = "")) +
     theme_classic()+
     theme(axis.title.y=element_blank(),
           axis.text.y=element_blank(),
           axis.ticks.y=element_blank())
-
 print(p)
