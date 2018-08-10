@@ -2,7 +2,7 @@
 
 ## Overview
 
-Scripts used to generate all papers figures and some raw data, like AsiSI search motif and DSB classes (HR/NHEJ).
+Scripts used to generate all figures from our article and some raw data, like AsiSI search motif and DSB classes (HR/NHEJ).
 
 ## System requirements
 
