@@ -16,7 +16,7 @@ file = "ASIsites_hg19.bed"
 
 full_data = data.frame()
 
-for( chromosome in chr_order ) {
+for( chromosome in paste0("chr",c(1:22,"X")) ) {
     chr_hg19 = hg19[[chromosome]]
     cc = matchPattern(ASI, chr_hg19, max.mismatch=0)
     taille = length(cc)
