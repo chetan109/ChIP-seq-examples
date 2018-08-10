@@ -33,7 +33,7 @@ the scripts were written with `R`, and need some packages :
 
 | Script                    | Description                                                                          | Figures                           |
 |---------------------------|--------------------------------------------------------------------------------------|-----------------------------------|
-| get_asi_location.R        | Search AsiSI motif across genome.                                                    | Table S1                          |
+| get_asi_location.R        | Search AsiSI motif across genome.                                                    |                           |
 | get_repair_classes.R      | Compute HR and NHEJ classes based on RAD51/XRCC4 and RAD51/Lig4 ratios.              |                                   |
 | index_BLESS.R             | Plot sorted BLESS value for each AsiSI location.                                     | Figure S1B                        |
 | make_bamcompare_profile.R | Plot LogRatio coverage for given bigwig.                                             | Figures 2B,3B,6B,S2D              |
