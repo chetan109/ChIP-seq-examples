@@ -32,7 +32,6 @@ the scripts were written with `R`, and need some packages :
 * `library(ggplot2)`.
 * `library(reshape2)`.
 * `library(dplyr)`.
-* `library(BSgenome.Hsapiens.UCSC.hg19)`.
 * `library(Homos.sapiens)`.
 
 | Script                    | Description                                                                          | Figures                           |
