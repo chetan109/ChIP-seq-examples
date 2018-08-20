@@ -6,7 +6,7 @@ Scripts used to generate all figures from our article and some raw data, like As
 
 ## Data accession
 
-Data will be available at [E-MTAB-5817](https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-5817/) (expedted release date : 27 september 2018). 
+Data will be available at [E-MTAB-5817](https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-5817/) (expected release date : 27 september 2018). 
 
 ## System requirements
 
