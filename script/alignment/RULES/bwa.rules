@@ -11,6 +11,7 @@ rule bwa_index:
 rule bwa_aln:
 	input:
 		fastq=config["GENERAL"]["sample_dir"]+"/{prefix}"+config["GENERAL"]["sample_ext"],
+		index=config["GENOME"]["gen_dir"]+config["GENOME"]["gen_ext"]+".bwt",
 		genome=config["GENOME"]["gen_dir"]+config["GENOME"]["gen_ext"]
 	output:
 		config["GENERAL"]["experiment_name"]+"/mapping/sam/{prefix}.sai"
