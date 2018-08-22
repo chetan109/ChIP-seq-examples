@@ -279,3 +279,24 @@ compute1ValPerSiteForBLESS <- function( bed, wig, w = 20000, seqlens, fun = "sum
     }
     return( vec );
 }
+
+
+
+
+bin.var <- function (x, bins = 4, method = c("intervals", "proportions", "natural"), labels = FALSE) {
+    method <- match.arg(method)
+    if (length(x) < bins) {
+        stop()
+    }
+    x <- if (method == "intervals")
+        cut(x, bins, labels = labels)
+    else if (method == "proportions")
+        cut(x, quantile(x, probs = seq(0, 1, 1/bins), na.rm = TRUE), include.lowest = TRUE, labels = labels)
+    else {
+        xx <- na.omit(x)
+        breaks <- c(min(xx), tapply(xx, KMeans(xx, bins)$cluster,
+                                    max))
+        cut(x, breaks, include.lowest = TRUE, labels = labels)
+    }
+    as.factor(x)
+}
